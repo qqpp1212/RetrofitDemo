@@ -53,7 +53,7 @@ public class OkHttpGetActivity extends AppCompatActivity {
                 // 后台线程：不能做UI的操作
                 Log.i("TAG","---请求失败"+e.getMessage());
             }
-            // 响应成功
+            // 请求成功
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 // 后台线程：不能做UI的操作
