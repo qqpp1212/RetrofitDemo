@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.feicuiedu.retrofitdemo.demoOkHttpGet.OkHttpGetActivity;
 import com.feicuiedu.retrofitdemo.demoOkHttpGet2.OkHttpGet2Activity;
+import com.feicuiedu.retrofitdemo.demoOkHttpPost.OkHttpPostActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Demo[] createDemos(){
         return new Demo[]{
                 new Demo("OkHttp的GET请求",new Intent(this,OkHttpGetActivity.class)),
-                new Demo("OkHttp的GET请求(拆分)",new Intent(this, OkHttpGet2Activity.class))
+                new Demo("OkHttp的GET请求(拆分)",new Intent(this, OkHttpGet2Activity.class)),
+                new Demo("OkHttp的POST请求",new Intent(this, OkHttpPostActivity.class))
         };
     }
 

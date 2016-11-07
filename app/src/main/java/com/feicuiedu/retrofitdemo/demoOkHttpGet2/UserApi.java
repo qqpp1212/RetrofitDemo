@@ -1,5 +1,7 @@
 package com.feicuiedu.retrofitdemo.demoOkHttpGet2;
 
+import com.feicuiedu.retrofitdemo.demoOkHttpPost.User;
+
 import okhttp3.Call;
 
 /**
@@ -8,6 +10,10 @@ import okhttp3.Call;
 
 public interface UserApi {
 
+    String URL_REGISTER = "http://admin.syfeicuiedu.com/Handler/UserHandler.ashx?action=register";
+
     Call getData(String url);
+
+    Call register(User user);
 
 }
