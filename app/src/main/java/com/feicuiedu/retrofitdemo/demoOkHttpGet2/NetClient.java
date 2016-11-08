@@ -56,7 +56,7 @@ public class NetClient implements UserApi {
 
         Gson gson = new Gson();
 
-        RequestBody requestBody = RequestBody.create(null, gson.toJson(user));
+        RequestBody requestBody = RequestBody.create(null,gson.toJson(user));
 
         Request request = new Request.Builder()
                 .post(requestBody)

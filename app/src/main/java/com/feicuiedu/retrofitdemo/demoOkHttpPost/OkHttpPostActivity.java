@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.feicuiedu.retrofitdemo.R;
 import com.feicuiedu.retrofitdemo.demoOkHttpGet2.NetClient;
@@ -37,16 +38,29 @@ public class OkHttpPostActivity extends AppCompatActivity {
 
         User user = new User(etUsername.getText().toString(),etPassrword.getText().toString());
 
-        // 去进行请求
-        NetClient.getInstance().register(user).enqueue(new Callback() {
+        // 去进行网络请求
+//        NetClient.getInstance().register(user).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.i("TAG","--请求失败");
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                Log.i("TAG","--响应成功");
+//            }
+//        });
+
+        NetClient.getInstance().register(user).enqueue(new UICallback() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                Log.i("TAG","--请求失败"+e.getMessage());
+            public void onFailureInUI(Call call, IOException e) {
+                Toast.makeText(OkHttpPostActivity.this, "--请求失败", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                Log.i("TAG","--响应成功");
+            public void onResponseInUI(Call call, Response response) {
+                Toast.makeText(OkHttpPostActivity.this, "--请求成功", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
