@@ -1,6 +1,7 @@
 package com.feicuiedu.retrofitdemo.demoRetrofitGet;
 
 import com.feicuiedu.retrofitdemo.demoOkHttpPost.User;
+import com.feicuiedu.retrofitdemo.demoRetrofitPost.UserResult;
 
 import java.util.Map;
 
@@ -30,6 +31,9 @@ public interface UserRetrofitApi {
 
     @GET("https://api.github.com/users/gqq")
     Call<Result> getData();
+
+    @POST("/Handler/UserHandler.ashx?action=register")
+    Call<UserResult> register(@Body User user);
 
     /**
      * 注解：

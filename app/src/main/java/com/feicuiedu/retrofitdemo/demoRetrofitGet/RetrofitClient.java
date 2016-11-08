@@ -1,9 +1,13 @@
 package com.feicuiedu.retrofitdemo.demoRetrofitGet;
 
+import com.feicuiedu.retrofitdemo.demoOkHttpPost.User;
+import com.feicuiedu.retrofitdemo.demoRetrofitPost.UserResult;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 
 /**
  * Created by 123 on 2016/11/8.
@@ -36,5 +40,10 @@ public class RetrofitClient implements UserRetrofitApi{
     @Override
     public Call<Result> getData() {
         return userRetrofitApi.getData();
+    }
+
+    @Override
+    public Call<UserResult> register(@Body User user) {
+        return userRetrofitApi.register(user);
     }
 }

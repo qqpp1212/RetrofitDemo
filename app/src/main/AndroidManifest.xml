@@ -20,7 +20,8 @@
         <activity android:name=".demoOkHttpGet.OkHttpGetActivity" />
         <activity android:name=".demoOkHttpGet2.OkHttpGet2Activity" />
         <activity android:name=".demoOkHttpPost.OkHttpPostActivity" />
-        <activity android:name=".demoRetrofitGet.RetrofitActivity"></activity>
+        <activity android:name=".demoRetrofitGet.RetrofitActivity" />
+        <activity android:name=".demoRetrofitPost.RetrofitPostActivity"></activity>
     </application>
 
 </manifest>
