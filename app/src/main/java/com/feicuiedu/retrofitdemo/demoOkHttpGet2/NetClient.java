@@ -1,6 +1,7 @@
 package com.feicuiedu.retrofitdemo.demoOkHttpGet2;
 
 import com.feicuiedu.retrofitdemo.demoOkHttpPost.User;
+import com.feicuiedu.retrofitdemo.demoRetrofitGet.UserRetrofitApi;
 import com.google.gson.Gson;
 
 import okhttp3.Call;
@@ -8,6 +9,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
 
 /**
  * Created by 123 on 2016/11/7.
@@ -31,6 +33,21 @@ public class NetClient implements UserApi {
         okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
+
+        /**
+         * 1. 创建一个执行请求的类Retrofit
+         * 2. 构建请求
+         * 3. 执行请求
+         * 4. 得到请求的数据
+         */
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("http:......")
+//                .build();
+//
+//        UserRetrofitApi userRetrofitApi = retrofit.create(UserRetrofitApi.class);
+//        // 执行的时候
+//        userRetrofitApi.getData().enqueue();
+
     }
 
     public static synchronized NetClient getInstance() {
