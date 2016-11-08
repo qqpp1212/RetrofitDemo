@@ -9,9 +9,12 @@ import com.feicuiedu.retrofitdemo.R;
 import com.feicuiedu.retrofitdemo.demoOkHttpPost.User;
 import com.feicuiedu.retrofitdemo.demoRetrofitGet.RetrofitClient;
 
+import org.xmlpull.v1.XmlPullParser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,7 +55,6 @@ public class RetrofitPostActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserResult> call, Throwable t) {
                     Toast.makeText(RetrofitPostActivity.this, "请求失败了"+t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
 

@@ -1,0 +1,24 @@
+1. Http知识点
+    1. 消息的结构：请求和响应的消息结构
+    2. 重定向；
+2. OkHttp
+    使用流程
+    Call模型的概念
+    功能：拦截器
+    java库，不考虑UI的变化
+3. Retrofit
+    要掌握使用流程和方法
+    注解来构建请求
+    转换器：Retrofit的功能
+    基于OkHttp进行封装的，Callback是可以更新UI的
+    使用OkHttp
+
+额外扩展：
+网络请求的第三方库：进行网络请求
+请求方式：GET，POST
+请求得到的数据：xml：要解析：sax，dom，pull，目的：得到相应的实体类
+              json：解析：JSON，Gson。。，目的：得到相应的实体类
+              html：解析，一般都是使用WebView直接展示出来
+
+              （Retrofit里面可以添加转换器，所以不用手动去解析）
+
