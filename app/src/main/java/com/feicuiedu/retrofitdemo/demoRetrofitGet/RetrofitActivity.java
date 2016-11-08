@@ -28,17 +28,18 @@ public class RetrofitActivity extends AppCompatActivity {
     public void onClick() {
 
         // 去执行请求
-        RetrofitClient.getInstances().getData().enqueue(new Callback<ResponseBody>() {
+        RetrofitClient.getInstances().getData().enqueue(new Callback<Result>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                // Okhttp是后台线程，Retrofit是可以更新UI的
-                Toast.makeText(RetrofitActivity.this, "--请求成功", Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                if (response.isSuccessful()){
+                    Result result = response.body();
+                Toast.makeText(RetrofitActivity.this, "--请求成功"+result.getLogin(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<Result> call, Throwable t) {
                 Toast.makeText(RetrofitActivity.this, "--请求失败", Toast.LENGTH_SHORT).show();
-
             }
         });
     }

@@ -29,7 +29,7 @@ public interface UserRetrofitApi {
     // 稍后会讲解注解这个内容
 
     @GET("https://api.github.com/users/gqq")
-    Call<ResponseBody> getData();
+    Call<Result> getData();
 
     /**
      * 注解：
@@ -56,7 +56,7 @@ public interface UserRetrofitApi {
      *
      */
 //    @GET
-    @POST("url")
+    /*@POST("url")
     @Headers({"Accept-Language:en","...","...","..."})
     Call<ResponseBody> getA(@Header("Accept-Lanuage")String lanuage, @Body User user);
 
@@ -85,6 +85,6 @@ public interface UserRetrofitApi {
     @Multipart
     Call<ResponseBody> getE(
             @Part("photo")ResponseBody responseBody,
-            @Part("name")String name);
+            @Part("name")String name);*/
 
 }

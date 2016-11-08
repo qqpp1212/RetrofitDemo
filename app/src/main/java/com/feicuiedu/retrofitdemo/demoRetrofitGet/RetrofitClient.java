@@ -3,6 +3,7 @@ package com.feicuiedu.retrofitdemo.demoRetrofitGet;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by 123 on 2016/11/8.
@@ -18,6 +19,8 @@ public class RetrofitClient implements UserRetrofitApi{
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
+                // 添加了Gson转换器
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
         userRetrofitApi = retrofit.create(UserRetrofitApi.class);
 
@@ -31,7 +34,7 @@ public class RetrofitClient implements UserRetrofitApi{
     }
 
     @Override
-    public Call<ResponseBody> getData() {
+    public Call<Result> getData() {
         return userRetrofitApi.getData();
     }
 }
