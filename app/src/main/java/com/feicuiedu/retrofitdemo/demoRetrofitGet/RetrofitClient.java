@@ -5,6 +5,7 @@ import com.feicuiedu.retrofitdemo.demoRetrofitPost.UserResult;
 
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -22,10 +23,19 @@ public class RetrofitClient implements UserRetrofitApi{
 
     private RetrofitClient() {
 
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 // 添加了Gson转换器
                 .addConverterFactory(GsonConverterFactory.create())
+                // 为Retrofit添加OkHttp
+                .client(okHttpClient)
                 .build();
         userRetrofitApi = retrofit.create(UserRetrofitApi.class);
 

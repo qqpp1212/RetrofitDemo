@@ -11,7 +11,6 @@
     注解来构建请求
     转换器：Retrofit的功能
     基于OkHttp进行封装的，Callback是可以更新UI的
-    使用OkHttp
 
 额外扩展：
 网络请求的第三方库：进行网络请求
